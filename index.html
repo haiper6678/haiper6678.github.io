@@ -1,155 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="jp">
 <head>
-<title>HTML5, CSS3 and JavaScript demo</title>
+  <title>まどマギ設定判別</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
 </head>
 <body>
-<script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
-  <script type="text/javascript", src="https://cdn.jsdelivr.net/jstat/latest/jstat.min.js"></script>
-<!-- Start your code here -->
-  <p>前回の回転数
-  <input type="number" min="0" data-bind="value: beforCount"></p>
-  <p>回転数
-  <input type="number" min="0" data-bind="value: count"></p>
-  <p data-bind="text: nowCount"></p>
-  <p>弱チェリー
-  <input type="number" min="0" data-bind="value: lowCherry"></p>
-  <p>単独紫7<input type="number" min="0" data-bind="value: soloP7"></p>
-  <p>スイカ赤7<input type="number" min="0" data-bind="value: suikaR7"></p>
-  <p>チャンスA異色7<input type="number" min="0" data-bind="value: chanceA7"></p>
-  <p data-bind="text: total7"></p>
-  <p>低確率スイカ合計<input type="number" min="0" data-bind="value: lowSuikaTotal"></p>
-  <p>低確率スイカCZ当選<input type="number" min="0" data-bind="value: lowSuikaCZ"></p>
-  <p>高確率スイカ合計<input type="number" min="0" data-bind="value: highSuikaTotal"></p>
-  <p>高確率スイカCZ当選<input type="number" min="0" data-bind="value: highSuikaCZ"></p>
-  <p>通常弱チェリー合計<input type="number" min="0" data-bind="value: nomalLowCherryTotal"></p>
-  <p>通常弱チェリーCZ当選<input type="number" min="0" data-bind="value: nomalLowCherryCZ"></p>
-<p data-bind="text: volume1"></p>
-  <p data-bind="text: volume2"></p>
-  <p data-bind="text: volume3"></p>
-  <p data-bind="text: volume4"></p>
-  <p data-bind="text: volume5"></p>
-  <p data-bind="text: volume6"></p>
-  <script >
+  <!-- Start your code here -->
+  <nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse" id="exCollapsingNavbar">
+    <div class="bg-inverse text-muted p-1">
+      <div class="row">
+      <div class="col-xs-2"><smap data-bind="text: volume1"></smap></div>
+      <div class="col-xz-2"><smap data-bind="text: volume2"></smap></div>
+      <div class="col-xz-2"><smap data-bind="text: volume3"></smap></div>
+      <div class="col-xz-2"><smap data-bind="text: volume4"></smap></div>
+      <div class="col-xz-2"><smap data-bind="text: volume5"></smap></div>
+      <div class="col-xz-2"><smap data-bind="text: volume6"></smap></div>
+        </div>
+    <div class="row">
+    </div>
+  </div>
+</nav>
   
-// Write JavaScript here 
+  <div class="container">
+    
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>前回の回転数</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: beforCount"  class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>回転数</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: count"  class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+          <small class="text-muted">
+            今回の回転数: <span data-bind="text: nowCount"></span>
+</small>
+        </fieldset>
+      </div>
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>弱チェリー</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: lowCherry" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>単独紫7</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: soloP7" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>スイカ赤7</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: suikaR7" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>チャンスA異色7</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: chanceA7" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>低確率スイカ合計</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: lowSuikaTotal" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>低確率スイカCZ当選</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: lowSuikaCZ" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>高確率スイカ合計</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: highSuikaTotal" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="col-lg-offset-3 col-lg-6">
+        <fieldset class="form-group">
+          <label>高確率スイカCZ当選</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">-</button>
+            </span>
+            <input type="number" min="0" data-bind="value: highSuikaCZ" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">+</button>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+      
+    
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+  <script type="text/javascript", src="https://cdn.jsdelivr.net/jstat/latest/jstat.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <script >
+// Write JavaScript here
 window.onload = function() {
-    var viewModel = function(){
-      var sum  = function(arr) {
-        return arr.reduce(function(prev, current, i, arr) {
-          return prev+current;
-        });
-       };
-      this.beforCount = ko.observable(0);
-      this.count = ko.observable(0);
-      this.nowCount = ko.computed(function() {
-        var count = this.count() - this.beforCount();
-        return ((count >= 0) ? count : 0);
-      }, this);
-      
-      this.lowCherry = ko.observable(0);
-      this.soloP7 = ko.observable(0);
-      this.suikaR7 = ko.observable(0);
-      this.chanceA7 = ko.observable(0);
-      this.total7 = ko.computed(function(){
-        return ((this.soloP7() - 0) + (this.suikaR7()-0) + (this.chanceA7()-0));
-      },this);
-      
-      this.lowSuikaTotal = ko.observable(0);
-      this.lowSuikaCZ = ko.observable(0);
-      this.highSuikaTotal = ko.observable(0);
-      this.highSuikaCZ = ko.observable(0);
-      this.nomalLowCherryTotal = ko.observable(0);
-      this.nomalLowCherryCZ = ko.observable(0);
-      
-      this.totalVolume = ko.computed(function() {
-        var lowCherryP = [
-          1/108.9,
-          1/102.2,
-          1/96.2,
-          1/91.0,
-          1/86.1,
-          1/81.5
-        ];
-        
-        var tokusyu7P = [
-          1/1725,
-          1/1725,
-          1/1490,
-          1/1260,
-          1/1008,
-          1/819
-        ];
-        
-        var lowSuikaCZP = [
-          0.125,
-          0.125,
-          0.176,
-          0.176,
-          0.25,
-          0.25
-        ];
-        
-        var highSuikaCZP = [
-          0.25,
-          0.25,
-          0.25,
-          0.336,
-          0.336,
-          0.336
-        ];
-        
-        var nomalCherryCZP = [
-          0.004,
-          0.004,
-          0.023,
-          0.047,
-          0.035
-        ];
-        var volume = [
-          1,1,1,1,1,1
-        ];
-        
-        for(var i=0; i<6;i++){
-          volume[i] = volume[i] * jStat.binomial.pdf(this.lowCherry()- 0,
-                                                     this.nowCount()- 0,
-                                                     lowCherryP[i]);
-          volume[i] = volume[i] * jStat.binomial.pdf(this.total7()- 0,
-                                                     this.nowCount()- 0,
-                                                     tokusyu7P[i]);
-          volume[i] = volume[i] * jStat.binomial.pdf(this.lowSuikaCZ()- 0,
-                                                     this.lowSuikaTotal()- 0,
-                                                     lowSuikaCZP[i]);
-          volume[i] = volume[i] * jStat.binomial.pdf(this.highSuikaCZ()- 0,
-                                                     this.highSuikaTotal()- 0,
-                                                     lowSuikaCZP[i]);
-        }
-        return volume;
-      }, this);
-      
-      this.volume1 = ko.computed(function() {
-        return this.totalVolume()[0] / sum(this.totalVolume());
-      }, this);
-      this.volume2 = ko.computed(function() {
-        return this.totalVolume()[1] / sum(this.totalVolume());
-      }, this);
-      this.volume3 = ko.computed(function() {
-        return this.totalVolume()[2] / sum(this.totalVolume());
-      }, this);
-      this.volume4 = ko.computed(function() {
-        return this.totalVolume()[3] / sum(this.totalVolume());
-      }, this);
-      this.volume5 = ko.computed(function() {
-        return this.totalVolume()[4] / sum(this.totalVolume());
-      }, this);
-      this.volume6 = ko.computed(function() {
-        return this.totalVolume()[5] / sum(this.totalVolume());
-      }, this);
-    };
-    ko.applyBindings(viewModel);
+  var sum  = function(arr) {
+    return arr.reduce(function(prev, current, i, arr) {
+      return prev+current;
+    });
+  };
+  var viewModel = function(){
+    this.beforCount = ko.observable(0);
+    this.count = ko.observable(0);
+    this.nowCount = ko.computed(function() {
+      var count = this.count() - this.beforCount();
+      return ((count >= 0) ? count : 0);
+    }, this);
+
+    this.lowCherry = ko.observable(0);
+    this.soloP7 = ko.observable(0);
+    this.suikaR7 = ko.observable(0);
+    this.chanceA7 = ko.observable(0);
+    this.total7 = ko.computed(function(){
+      return ((this.soloP7() - 0) + (this.suikaR7() - 0) + (this.chanceA7() - 0));
+    },this);
+
+    this.lowSuikaTotal = ko.observable(0);
+    this.lowSuikaCZ = ko.observable(0);
+    this.highSuikaTotal = ko.observable(0);
+    this.highSuikaCZ = ko.observable(0);
+    
+    var lowCherryP = [
+      1/108.9,
+      1/102.2,
+      1/96.2,
+      1/91.0,
+      1/86.1,
+      1/81.5
+    ];
+    this.lowCherryVolume = ko.computed(function(){
+      return lowCherryP.map(function(p){
+        return jStat.binomial.pdf(this.lowCherry()- 0,
+                                  this.nowCount()- 0,
+                                  p);
+      });
+    },this);
+
+    var soloP7P =[
+      1/6554,
+      1/6554,
+      1/5461,
+      1/4369,
+      1/2979,
+      1/2185
+    ];
+    this.soloP7Volume = ko.computed(function(){
+      return soloP7P.map(function(p){
+        return jStat.binomial.pdf(this.soloP7()- 0,
+                                  this.nowCount()- 0,
+                                  p);
+      });
+    },this);
+    
+    var chanceA7P =[
+      1/3449,
+      1/3449,
+      1/3121,
+      1/2849,
+      1/2521,
+      1/2185
+    ];
+    this.chanceA7Volume = ko.computed(function(){
+      return chanceA7P.map(function(p){
+        return jStat.binomial.pdf(this.chanceA7()- 0,
+                                  this.nowCount()- 0,
+                                  p);
+      });
+    },this);
+    
+    var suikaR7P =[
+      1/7282,
+      1/7282,
+      1/5958,
+      1/4681,
+      1/3855,
+      1/3277
+    ];
+    this.suikaR7Volume = ko.computed(function(){
+      return suikaR7P.map(function(p){
+        return jStat.binomial.pdf(this.suikaR7()- 0,
+                                  this.nowCount()- 0,
+                                  p);
+      });
+    },this);
+    
+    var lowSuikaCZP = [
+      0.125,
+      0.125,
+      0.176,
+      0.176,
+      0.25,
+      0.25
+    ];
+    this.lowSuikaCZVolume = ko.computed(function(){
+      return lowSuikaCZP.map(function(p){
+        return jStat.binomial.pdf(this.lowSuikaCZ()- 0,
+                                  this.lowSuikaTotal()- 0,
+                                  p);
+      });
+    },this);
+
+    var highSuikaCZP = [
+      0.25,
+      0.25,
+      0.25,
+      0.336,
+      0.336,
+      0.336
+    ];
+    this.highSuikaCZVolume = ko.computed(function(){
+      return highSuikaCZP.map(function(p){
+        return jStat.binomial.pdf(this.highSuikaCZ()- 0,
+                                  this.highSuikaTotal()- 0,
+                                  p);
+      });
+    },this);
+            
+    this.totalVolume = ko.computed(function() {
+      var volume = [1,1,1,1,1,1];
+      for(var i=0;i<lowCherryP.length;i++){
+        volume[i] = this.lowCherryVolume()[i] *
+          this.soloP7Volume()[i] *
+          this.chanceA7Volume()[i] *
+          this.suikaR7Volume()[i] *
+          this.lowSuikaCZVolume()[i] *
+          this.highSuikaCZVolume()[i];
+      }
+      return volume;
+    }, this);
+
+    this.volume1 = ko.computed(function() {
+      return this.totalVolume()[0] / sum(this.totalVolume());
+    }, this);
+    this.volume2 = ko.computed(function() {
+      return this.totalVolume()[1] / sum(this.totalVolume());
+    }, this);
+    this.volume3 = ko.computed(function() {
+      return this.totalVolume()[2] / sum(this.totalVolume());
+    }, this);
+    this.volume4 = ko.computed(function() {
+      return this.totalVolume()[3] / sum(this.totalVolume());
+    }, this);
+    this.volume5 = ko.computed(function() {
+      return this.totalVolume()[4] / sum(this.totalVolume());
+    }, this);
+    this.volume6 = ko.computed(function() {
+      return this.totalVolume()[5] / sum(this.totalVolume());
+    }, this);
+  };
+  ko.applyBindings(viewModel);
 };
   </script>
-<!-- End your code here -->
+  <!-- End your code here -->
 </body>
 </html>
-
