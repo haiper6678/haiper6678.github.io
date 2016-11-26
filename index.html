@@ -31,6 +31,7 @@
           <li class="list-group-item">設定4:<smap data-bind="text: volume4"></smap>%</li>
           <li class="list-group-item">設定5:<smap data-bind="text: volume5"></smap>%</li>
           <li class="list-group-item">設定6:<smap data-bind="text: volume6"></smap>%</li>
+          <li class="list-group-item">期待回収率:<smap data-bind="text: volumeP"></smap>%</li>
         </ul>
       </div>
     </div>
@@ -354,6 +355,14 @@ window.onload = function() {
     }, this);
     this.volume6 = ko.computed(function() {
       return ((this.totalVolume()[5] / sum(this.totalVolume()))*100).toPrecision(6);
+    }, this);
+    this.volumeP = ko.computed(function() {
+      return (this.totalVolume()[0] / sum(this.totalVolume())) * 0.985 +
+      (this.totalVolume()[1] / sum(this.totalVolume())) * 0.996+
+      (this.totalVolume()[2] / sum(this.totalVolume())) * 1.011 +
+      (this.totalVolume()[3] / sum(this.totalVolume())) * 1.044 +
+      (this.totalVolume()[4] / sum(this.totalVolume())) * 1.074 +
+      (this.totalVolume()[5] / sum(this.totalVolume())) * 1.11;
     }, this);
   };
   ko.applyBindings(viewModel);
